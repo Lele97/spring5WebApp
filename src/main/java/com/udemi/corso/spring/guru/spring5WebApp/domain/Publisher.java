@@ -1,11 +1,10 @@
 package com.udemi.corso.spring.guru.spring5WebApp.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Publisher {
@@ -13,15 +12,29 @@ public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String addreess;
+    private String name;
+    private String addreessLine1;
     private String city;
     private String state;
     private String zip;
 
-    public Publisher(){}
+    @OneToMany
+    @JoinColumn(name = "publisher_id")
+    private Set<Book> books = new HashSet<>();
 
-    public Publisher(String addreess, String city, String state, String zip) {
-        this.addreess = addreess;
+    public Publisher() {
+    }
+
+    public Publisher(String addreessLine1, String city, String state, String zip) {
+        this.addreessLine1 = addreessLine1;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+    }
+
+    public Publisher(String name, String addreessLine1, String city, String state, String zip) {
+        this.name = name;
+        this.addreessLine1 = addreessLine1;
         this.city = city;
         this.state = state;
         this.zip = zip;
@@ -35,12 +48,29 @@ public class Publisher {
         this.id = id;
     }
 
-    public String getAddreess() {
-        return addreess;
+
+    public String getName() {
+        return name;
     }
 
-    public void setAddreess(String addreess) {
-        this.addreess = addreess;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddreessLine1() {
+        return addreessLine1;
+    }
+
+    public void setAddreessLine1(String addreessLine1) {
+        this.addreessLine1 = addreessLine1;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 
     public String getCity() {
@@ -67,10 +97,12 @@ public class Publisher {
         this.zip = zip;
     }
 
+
     @Override
     public String toString() {
         return "Publisher{" +
-                "addreess='" + addreess + '\'' +
+                "name='" + name + '\'' +
+                ", addreessLine1='" + addreessLine1 + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zip='" + zip + '\'' +
