@@ -27,6 +27,7 @@ public class BootstrapData implements CommandLineRunner {
     public void run(String... args) {
 
         System.out.println("Started in Bootstrap");
+        System.out.println("*** Current version of web application :: " + BootstrapData.class.getPackage().getImplementationVersion());
 
         Publisher publisher = new Publisher();
         Publisher publisherSecond = new Publisher();

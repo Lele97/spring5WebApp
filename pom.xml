@@ -44,7 +44,8 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/Lele97/spring5WebApp.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>webApp-@{project.version}</tag>
+        <url>https://github.com/Lele97/spring5WebApp</url>
     </scm>
 
     <build>
@@ -58,6 +59,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <mainClass>${start.class}</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
             </plugin>
         </plugins>
     </build>
