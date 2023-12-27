@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.udemi.corso.spring.guru</groupId>
     <artifactId>spring5WebApp</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>spring5WebApp</name>
     <description>Frist Project Spring 5 Guru Created From Initializr</description>
 
@@ -44,7 +44,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/Lele97/spring5WebApp.git</developerConnection>
-        <tag>spring5WebApp-1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <build>
