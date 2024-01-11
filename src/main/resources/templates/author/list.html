@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Framework Guru</title>
+    <!--[ Link for Bootstrap]-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<h1>Author List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>FRIST NAME</th>
+        <th>LAST NAME</th>
+        <th>BOOK</th>
+    </tr>
+    <tr th:each="author : ${authors}">
+        <th th:text="${author.id}">
+        <th th:text="${author.firstName}">
+        <th th:text="${author.lastName}">
+    </tr>
+</table>
+
+</body>
+</html>
