@@ -36,6 +36,11 @@ public class BootstrapData implements CommandLineRunner {
         Author rod = new Author("Rod", "Johnson");
         Book noEJB = new Book("J2EE Development without EJB", "3939459459");
 
+
+
+
+
+
         publisher.setName("Agency");
         publisher.setAddreessLine1("Adress test line 12");
         publisher.setCity("Naples");
