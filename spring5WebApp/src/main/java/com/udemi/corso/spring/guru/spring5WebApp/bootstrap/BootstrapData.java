@@ -27,6 +27,7 @@ public class BootstrapData implements CommandLineRunner {
     public void run(String... args) {
 
         System.out.println("Started in Bootstrap");
+        System.out.println("*** Current version of web application :: " + BootstrapData.class.getPackage().getImplementationVersion());
 
         Publisher publisher = new Publisher();
         Publisher publisherSecond = new Publisher();
@@ -34,6 +35,11 @@ public class BootstrapData implements CommandLineRunner {
         Book ddd = new Book("Domain Driver Design", "123123");
         Author rod = new Author("Rod", "Johnson");
         Book noEJB = new Book("J2EE Development without EJB", "3939459459");
+
+
+
+
+
 
         publisher.setName("Agency");
         publisher.setAddreessLine1("Adress test line 12");
