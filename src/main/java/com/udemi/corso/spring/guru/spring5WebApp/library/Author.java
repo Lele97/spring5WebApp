@@ -1,4 +1,4 @@
-package com.udemi.corso.spring.guru.spring5WebApp.domain;
+package com.udemi.corso.spring.guru.spring5WebApp.library;
 
 
 import jakarta.persistence.*;
@@ -8,14 +8,19 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
+@Table(schema = "library", catalog = "library")
 public class Author {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(schema = "library", catalog = "library", name = "author_sequence", allocationSize = 1, sequenceName = "author_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "author_sequence")
     private Long id;
+
     private String firstName;
+
     private String lastName;
-    @ManyToMany(mappedBy = "authors")
+
+    @ManyToMany(mappedBy = "authors", cascade = CascadeType.ALL)
     private Set<Book> book = new HashSet<>();
 
     public Author() {
