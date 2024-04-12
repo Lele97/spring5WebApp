@@ -1,6 +1,5 @@
-package com.udemi.corso.spring.guru.spring5WebApp.controller;
+package com.udemi.corso.spring.guru.spring5WebApp.library;
 
-import com.udemi.corso.spring.guru.spring5WebApp.repositories.BookRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

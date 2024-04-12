@@ -1,4 +1,4 @@
-package com.udemi.corso.spring.guru.spring5WebApp.domain;
+package com.udemi.corso.spring.guru.spring5WebApp.library;
 
 import jakarta.persistence.*;
 
@@ -7,15 +7,22 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
+@Table(schema = "library", catalog = "library")
 public class Publisher {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(schema = "library", catalog = "library", name = "publisher_sequence", allocationSize = 1, sequenceName = "publisher_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "publisher_sequence")
     private Long id;
+
     private String name;
+
     private String addreessLine1;
+
     private String city;
+
     private String state;
+
     private String zip;
 
     @OneToMany

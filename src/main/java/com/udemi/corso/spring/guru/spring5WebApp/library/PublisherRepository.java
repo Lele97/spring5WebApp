@@ -1,6 +1,5 @@
-package com.udemi.corso.spring.guru.spring5WebApp.repositories;
+package com.udemi.corso.spring.guru.spring5WebApp.library;
 
-import com.udemi.corso.spring.guru.spring5WebApp.domain.Publisher;
 import org.springframework.data.repository.CrudRepository;
 
 
