@@ -1,11 +1,11 @@
 package com.udemi.corso.spring.guru.spring5WebApp.bootstrap;
 
-import com.udemi.corso.spring.guru.spring5WebApp.library.Author;
-import com.udemi.corso.spring.guru.spring5WebApp.library.Book;
-import com.udemi.corso.spring.guru.spring5WebApp.library.Publisher;
-import com.udemi.corso.spring.guru.spring5WebApp.library.AuthorRepository;
-import com.udemi.corso.spring.guru.spring5WebApp.library.BookRepository;
-import com.udemi.corso.spring.guru.spring5WebApp.library.PublisherRepository;
+import com.udemi.corso.spring.guru.spring5WebApp.domain.Author;
+import com.udemi.corso.spring.guru.spring5WebApp.domain.Book;
+import com.udemi.corso.spring.guru.spring5WebApp.domain.Publisher;
+import com.udemi.corso.spring.guru.spring5WebApp.repositories.AuthorRepository;
+import com.udemi.corso.spring.guru.spring5WebApp.repositories.BookRepository;
+import com.udemi.corso.spring.guru.spring5WebApp.repositories.PublisherRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -27,7 +27,7 @@ public class BootstrapData implements CommandLineRunner {
     public void run(String... args) {
 
         System.out.println("Started in Bootstrap");
-        System.out.println("*** Current version of web application :: " + getClass().getPackage().getImplementationVersion() + " ***");
+        System.out.println("*** Current version of web application :: " + BootstrapData.class.getPackage().getImplementationVersion());
 
         Publisher publisher = new Publisher();
         Publisher publisherSecond = new Publisher();
@@ -35,6 +35,11 @@ public class BootstrapData implements CommandLineRunner {
         Book ddd = new Book("Domain Driver Design", "123123");
         Author rod = new Author("Rod", "Johnson");
         Book noEJB = new Book("J2EE Development without EJB", "3939459459");
+
+
+
+
+
 
         publisher.setName("Agency");
         publisher.setAddreessLine1("Adress test line 12");
@@ -70,4 +75,3 @@ public class BootstrapData implements CommandLineRunner {
         System.out.println("Number of Publisher:  " + publisherRepository.count());
     }
 }
-
