@@ -9,5 +9,4 @@ Branch Equality-Repositories-Initializing
 Branch spring-MVC
 Branch spring-pet-clinic
 Branch Final
-Branch Two_datasource_update
 
