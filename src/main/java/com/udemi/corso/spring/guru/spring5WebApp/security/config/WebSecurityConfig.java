@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -21,15 +21,12 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) {
         try {
-            return httpSecurity.authorizeHttpRequests((authz) -> authz.requestMatchers("/api/v*/registration/**").permitAll().anyRequest().authenticated()).build();
+            return httpSecurity.authorizeHttpRequests((authz) -> authz.requestMatchers("/api/v*/registration/**").permitAll().anyRequest().authenticated())
+                    .csrf((AbstractHttpConfigurer::disable))
+                    .build();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-    @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("");
     }
 
     @Bean
