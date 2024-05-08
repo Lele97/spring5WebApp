@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.udemi.corso.spring.guru</groupId>
     <artifactId>spring5WebApp</artifactId>
-    <version>2.0.1-SNAPSHOT</version>
+    <version>3.0.0</version>
     <name>spring5WebApp</name>
     <description>Frist Project Spring 5 Guru Created From Initializr</description>
 
@@ -69,7 +69,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/Lele97/spring5WebApp.git</developerConnection>
-        <tag>spring5WebApp-2.0.1</tag>
+        <tag>spring5WebApp-3.0.0</tag>
         <connection>scm:git:https://github.com/Lele97/spring5WebApp.git</connection>
         <url>https://github.com/Lele97/spring5WebApp</url>
     </scm>
