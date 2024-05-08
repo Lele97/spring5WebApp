@@ -21,7 +21,7 @@ import java.util.Objects;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages={"com.udemi.corso.spring.guru.spring5WebApp.appuser"},
+        basePackages={"com.udemi.corso.spring.guru.spring5WebApp.appuser","com.udemi.corso.spring.guru.spring5WebApp.registration.token","com.udemi.corso.spring.guru.spring5WebApp.mail"},
         entityManagerFactoryRef = "OneEntityManagerFactory",
         transactionManagerRef = "OneTransactionManager")
 public class OneDataDourceConfig {
@@ -48,7 +48,7 @@ public class OneDataDourceConfig {
         properties.put("hibernate.hbm2ddl.auto", "create");
         return builder
                 .dataSource(dataSource)
-                .packages("com.udemi.corso.spring.guru.spring5WebApp.appuser")
+                .packages("com.udemi.corso.spring.guru.spring5WebApp.appuser","com.udemi.corso.spring.guru.spring5WebApp.registration.token","com.udemi.corso.spring.guru.spring5WebApp.mail")
                 .persistenceUnit("One")
                 .properties(properties)
                 .build();
