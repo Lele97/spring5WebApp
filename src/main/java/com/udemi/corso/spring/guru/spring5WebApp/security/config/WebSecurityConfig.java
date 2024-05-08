@@ -19,11 +19,8 @@ public class WebSecurityConfig {
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) {
-        //TODO aggiugere gestione eccezzione
-
         try {
             return httpSecurity.authorizeHttpRequests((authz) -> authz.requestMatchers("/api/v*/registration/**").permitAll().anyRequest().authenticated())
                     .formLogin(Customizer.withDefaults())
